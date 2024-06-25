@@ -1,0 +1,26 @@
+{
+	"name": "costless",
+	"version": "1.0.0",
+	"description": "",
+	"author": "Jay",
+	"license": "CC-BY-NC-SA-4.0",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc --build --clean && tsc",
+		"dev": "MODE=dev node .",
+		"start": "MODE=prod node ."
+	},
+	"dependencies": {
+		"discord.js": "^14.15.3"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.5.0",
+		"@types/node": "^20.14.8",
+		"dotenv": "^16.4.5",
+		"eslint": "9.x",
+		"globals": "^15.6.0",
+		"prettier": "^3.3.2",
+		"typescript": "^5.5.2",
+		"typescript-eslint": "^7.14.1"
+	}
+}
