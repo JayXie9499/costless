@@ -22,19 +22,19 @@ export class Logger {
 	}
 
 	public info(...messages: unknown[]) {
-		this.writeLog(LogLevel.INFO, messages);
+		this.writeLog(LogLevel.INFO, ...messages);
 	}
 
 	public warn(...messages: unknown[]) {
-		this.writeLog(LogLevel.WARN, messages);
+		this.writeLog(LogLevel.WARN, ...messages);
 	}
 
 	public error(...messages: unknown[]) {
-		this.writeLog(LogLevel.ERROR, messages);
+		this.writeLog(LogLevel.ERROR, ...messages);
 	}
 
 	public debug(...messages: unknown[]) {
-		this.writeLog(LogLevel.DEBUG, messages);
+		this.writeLog(LogLevel.DEBUG, ...messages);
 	}
 
 	private writeLog(level: LogLevel, ...messages: unknown[]) {
