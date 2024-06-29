@@ -13,6 +13,7 @@
 		"start": "MODE=prod node ."
 	},
 	"dependencies": {
+		"@napi-rs/canvas": "^0.1.53",
 		"discord.js": "^14.15.3"
 	},
 	"devDependencies": {
