@@ -23,7 +23,7 @@ export interface Command {
 	data: SlashCommandBuilder;
 	execute(
 		bot: Bot<true>,
-		interaction: ChatInputCommandInteraction
+		interaction: ChatInputCommandInteraction<"cached" | "raw">
 	): Promise<void>;
 }
 
