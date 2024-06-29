@@ -4,7 +4,7 @@ import { Command } from "../../types";
 export default {
 	data: new SlashCommandBuilder()
 		.setName("ping")
-		.setDescription("ping the bot"),
+		.setDescription("檢測機器人延遲。"),
 	async execute(bot, interaction) {
 		const reply = await interaction.deferReply({ fetchReply: true });
 
