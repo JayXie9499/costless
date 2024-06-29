@@ -36,11 +36,7 @@ export class Bot<Ready extends boolean = boolean> extends Client<Ready> {
 
 		process
 			.on("unhandledRejection", (reason) => this.logger.error(reason))
-			.on("uncaughtException", this.logger.error)
-			.on("exit", this.destroy)
-			.on("SIGINT", this.destroy)
-			.on("SIGUSR1", this.destroy)
-			.on("SIGUSR2", this.destroy);
+			.on("uncaughtException", this.logger.error);
 	}
 
 	private async loadEvents() {
@@ -82,7 +78,9 @@ export class Bot<Ready extends boolean = boolean> extends Client<Ready> {
 	}
 
 	private async deployCommands() {
-		const commands = this.commands.mapValues((cmd) => cmd.data.toJSON());
+		const commands = this.commands.mapValues((cmd) =>
+			cmd.data.setDMPermission(false).toJSON()
+		);
 		const rest = new REST();
 
 		rest.setToken(process.env["BOT_TOKEN"]!);
