@@ -15,6 +15,14 @@ export default {
 		}
 
 		command.execute(bot, interaction);
-		bot.logger.info(`@${interaction.user.username} executed /${commandName}`);
+
+		const subcommandGroup = interaction.options.getSubcommandGroup();
+		const subcommand = interaction.options.getSubcommand();
+
+		bot.logger.info(
+			`@${interaction.user.username} executed /${commandName}`,
+			subcommandGroup ?? "",
+			subcommand ?? ""
+		);
 	}
 } as Event<"interactionCreate">;
