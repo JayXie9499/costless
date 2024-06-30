@@ -9,7 +9,8 @@ export default [
 	...tseslint.configs.recommended,
 	{
 		rules: {
-			"no-irregular-whitespace": "off"
+			"no-irregular-whitespace": "off",
+			"no-case-declarations": "off"
 		}
 	}
 ];
