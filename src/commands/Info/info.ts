@@ -14,16 +14,16 @@ import { generateGuildIcon } from "../../utils";
 export default {
 	data: new SlashCommandBuilder()
 		.setName("info")
-		.setDescription("取得伺服器或使用者資訊。")
+		.setDescription("取得伺服器或使用者資訊")
 		.addSubcommand(
 			new SlashCommandSubcommandBuilder()
 				.setName("server")
-				.setDescription("取得當前伺服器資訊。")
+				.setDescription("取得當前伺服器資訊")
 		)
 		.addSubcommand(
 			new SlashCommandSubcommandBuilder()
 				.setName("user")
-				.setDescription("取得使用者資訊。")
+				.setDescription("取得使用者資訊")
 				.addUserOption(
 					new SlashCommandUserOption()
 						.setName("user")
@@ -37,8 +37,7 @@ export default {
 		const subcommand = interaction.options.getSubcommand(true);
 
 		if (subcommand === "server") {
-			const guild =
-				interaction.guild ?? (await bot.guilds.fetch(interaction.guildId));
+			const guild = await bot.guilds.fetch(interaction.guildId);
 			const iconUrl = guild.iconURL();
 			const bannerUrl = guild.bannerURL();
 			let row;
