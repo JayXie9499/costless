@@ -45,7 +45,7 @@ export class Logger {
 			) + `[${level.toUpperCase()}]`.padEnd(8);
 
 		for (const msg of messages) {
-			if (content !== "") {
+			if (msg !== "") {
 				content += " ";
 			}
 			if (typeof msg === "object") {
